@@ -3,14 +3,10 @@ import newsController from "../controllers/newsController.js";
 
 const newsRouter = express.Router();
 
+//get all news
 newsRouter.get("/", newsController.getNews);
 
-newsRouter.get("/:id", newsController.getNewsById);
-
+//create news
 newsRouter.post("/", newsController.createNews);
-
-newsRouter.put("/:id", newsController.updateNews);
-
-newsRouter.delete("/:id", newsController.deleteNews);
 
 export default newsRouter;

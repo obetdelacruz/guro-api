@@ -1,13 +1,12 @@
 import mongoose from "mongoose";
 
-// Schema for news
-const newsSchema = new mongoose.Schema({
+// Schema for classroom policies
+const policiesSchema = new mongoose.Schema({
   title: String,
   description: String,
-  author: String,
 });
 
-newsSchema.set("toJSON", {
+policiesSchema.set("toJSON", {
   transform: (_document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject._id;
@@ -15,7 +14,7 @@ newsSchema.set("toJSON", {
   },
 });
 
-// Model for news
-const News = mongoose.model("News", newsSchema);
+// Model for classroom policies
+const Policies = mongoose.model("Policies", policiesSchema);
 
-export default News;
+export default Policies;

@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import config from "./utils/config.js";
 import loginRouter from "./routes/loginRouter.js";
-import gradeRouter from "./routes/gradeRouter.js";
+import policiesRouter from "./routes/policiesRouter.js";
+import teacherRouter from "./routes/teacherRouter.js";
+import studentRouter from "./routes/studentRouter.js";
 import newsRouter from "./routes/newsRouter.js";
-import rulesRouter from "./routes/rulesRouter.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import unknownEndpoint from "./middlewares/unknownEndpoint.js";
 
@@ -27,9 +28,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
 app.use("/api/login", loginRouter);
-app.use("/api/grades", gradeRouter);
+app.use("/api/policies", policiesRouter);
+app.use("/api/teacher", teacherRouter);
+app.use("/api/student", studentRouter);
 app.use("/api/news", newsRouter);
-app.use("/api/rules", rulesRouter);
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
